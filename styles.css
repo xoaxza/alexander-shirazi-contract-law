@@ -4,7 +4,7 @@
   --surface: rgba(255, 252, 246, 0.8);
   --surface-strong: #fffdf8;
   --text: #1f2421;
-  --muted: #5c655f;
+  --muted: #49534d;
   --line: rgba(31, 36, 33, 0.12);
   --accent: #1f4f46;
   --accent-soft: #dce7e2;
@@ -149,8 +149,10 @@ body::before {
 .panel-label {
   margin: 0 0 12px;
   color: var(--accent);
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
@@ -320,6 +322,23 @@ h3 {
 .faq-item {
   padding: 0;
   overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.faq-item:hover {
+  background: rgba(255, 253, 248, 0.96);
+  border-color: rgba(31, 79, 70, 0.24);
+  box-shadow: 0 22px 50px rgba(46, 47, 39, 0.1);
+}
+
+.faq-item[open] {
+  background: rgba(255, 253, 248, 0.98);
+  border-color: rgba(31, 79, 70, 0.22);
+  box-shadow: 0 24px 56px rgba(46, 47, 39, 0.1);
 }
 
 .faq-item summary {
@@ -328,6 +347,19 @@ h3 {
   cursor: pointer;
   list-style: none;
   font-weight: 700;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.faq-item:hover summary {
+  color: #173b35;
+}
+
+.faq-item summary:focus-visible {
+  outline: 2px solid rgba(31, 79, 70, 0.42);
+  outline-offset: -2px;
+  background: rgba(220, 231, 226, 0.34);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -340,12 +372,23 @@ h3 {
   right: 24px;
   transform: translateY(-50%);
   color: var(--accent);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition:
+    transform 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease;
   content: "+";
+}
+
+.faq-item:hover summary::after,
+.faq-item summary:focus-visible::after {
+  color: #173b35;
 }
 
 .faq-item[open] summary::after {
   content: "−";
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .faq-item p {
@@ -383,15 +426,18 @@ h3 {
 .copyright,
 .disclaimer {
   margin: 0;
-  font-size: 0.94rem;
+  font-size: 0.98rem;
 }
 
 .disclaimer {
   max-width: 70rem;
+  color: #3f4843;
+  line-height: 1.78;
 }
 
 .copyright {
   margin-top: 16px;
+  color: #4d5751;
 }
 
 @media (max-width: 980px) {
