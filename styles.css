@@ -4,7 +4,7 @@
   --surface: rgba(255, 252, 246, 0.8);
   --surface-strong: #fffdf8;
   --text: #1f2421;
-  --muted: #49534d;
+  --muted: #434c47;
   --line: rgba(31, 36, 33, 0.12);
   --accent: #1f4f46;
   --accent-soft: #dce7e2;
@@ -149,7 +149,7 @@ body::before {
 .panel-label {
   margin: 0 0 12px;
   color: var(--accent);
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   line-height: 1.35;
@@ -203,7 +203,7 @@ h3 {
 .footer-top p,
 .footer-top a {
   line-height: 1.7;
-  color: var(--muted);
+  color: #424b46;
 }
 
 .hero-detail {
@@ -310,7 +310,7 @@ h3 {
   display: inline-flex;
   margin-bottom: 18px;
   color: var(--accent);
-  font-size: 0.9rem;
+  font-size: 0.94rem;
   font-weight: 800;
 }
 
@@ -426,13 +426,13 @@ h3 {
 .copyright,
 .disclaimer {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
 
 .disclaimer {
   max-width: 70rem;
-  color: #3f4843;
-  line-height: 1.78;
+  color: #37403b;
+  line-height: 1.82;
 }
 
 .copyright {
